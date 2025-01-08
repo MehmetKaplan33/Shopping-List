@@ -1,0 +1,449 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, var(--bg-gradient-1) 0%, var(--bg-gradient-2) 100%);
+  min-height: 100vh;
+  padding: 2rem 0;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Animasyonlu arka plan desenleri */
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Gradient desen */
+body::before {
+  content: '';
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  opacity: 0.03;
+  background: 
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' fill='%239333ea' viewBox='0 0 16 16'%3E%3Cpath d='M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z'/%3E%3C/svg%3E") 0 0 / 50px 50px,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' fill='%2334d399' viewBox='0 0 16 16'%3E%3Cpath d='M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z'/%3E%3C/svg%3E") 100px 100px / 40px 40px,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='45' height='45' fill='%239333ea' viewBox='0 0 16 16'%3E%3Cpath d='M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9H2zM1 7v1h14V7H1zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5z'/%3E%3C/svg%3E") 200px 50px / 45px 45px;
+  animation: shoppingIconsFloat 30s linear infinite;
+}
+
+/* Izgara desen */
+body::after {
+  content: '';
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: 
+    radial-gradient(4px 4px at 40px 40px, rgba(147, 51, 234, 0.15) 50%, transparent 50%),
+    radial-gradient(4px 4px at 80px 60px, rgba(52, 211, 153, 0.15) 50%, transparent 50%),
+    radial-gradient(4px 4px at 20px 120px, rgba(147, 51, 234, 0.15) 50%, transparent 50%),
+    radial-gradient(4px 4px at 120px 120px, rgba(52, 211, 153, 0.15) 50%, transparent 50%);
+  background-size: 140px 140px;
+  animation: gradientMove 15s linear infinite;
+  opacity: 0.5;
+}
+
+@keyframes gradientMove {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(-70px, -70px) rotate(360deg);
+  }
+}
+
+@keyframes patternMove {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    transform: translateX(20px) translateY(20px);
+  }
+}
+
+@keyframes shoppingIconsFloat {
+  0% {
+    background-position: 
+      0 0,
+      100px 100px,
+      200px 50px;
+  }
+  100% {
+    background-position: 
+      100px 100px,
+      200px 200px,
+      300px 150px;
+  }
+}
+
+/* Yüzen parçacıklar */
+.container::before,
+.container::after {
+  content: '';
+  position: fixed;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(147, 51, 234, 0.1), transparent 70%);
+  filter: blur(40px);
+  z-index: -1;
+  animation: float 20s infinite ease-in-out;
+  opacity: 0.15;
+}
+
+.container::before {
+  top: -200px;
+  left: -200px;
+}
+
+.container::after {
+  bottom: -200px;
+  right: -200px;
+  background: radial-gradient(circle at center, rgba(52, 211, 153, 0.1), transparent 70%);
+  animation-delay: -10s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(50px, 50px) rotate(90deg);
+  }
+  50% {
+    transform: translate(0, 100px) rotate(180deg);
+  }
+  75% {
+    transform: translate(-50px, 50px) rotate(270deg);
+  }
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: var(--text-color);
+  margin-bottom: 2rem;
+  font-weight: 700;
+  text-align: center;
+  text-shadow: 2px 2px 20px rgba(147, 51, 234, 0.3);
+  position: relative;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 3px;
+  background: linear-gradient(90deg, #9333ea, #34d399);
+  border-radius: 3px;
+}
+
+.shopping-form {
+  background: var(--card-bg);
+  box-shadow: 0 8px 32px var(--shadow-color);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+}
+
+.shopping-form .form-control:focus {
+  box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.2);
+  border-color: #9333ea;
+}
+
+.filter-buttons {
+  background: var(--card-bg);
+  box-shadow: 0 8px 32px var(--shadow-color);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+}
+
+.filter-buttons .btn {
+  margin: 0 5px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  min-width: 140px;
+}
+
+.filter-buttons .btn i {
+  transition: all 0.3s ease;
+}
+
+.filter-buttons .btn:hover i {
+  transform: scale(1.2);
+}
+
+/* Aktif buton stilleri */
+.filter-buttons .btn.btn-primary i {
+  transform: scale(1.2);
+  animation: pulse 1.5s infinite;
+}
+
+.filter-buttons .btn-primary {
+  background: linear-gradient(135deg, #9333ea, #34d399);
+  border: none;
+}
+
+.filter-buttons .btn-primary:hover {
+  background: linear-gradient(135deg, #8324d8, #2cb67d);
+}
+
+.filter-buttons .btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #9333ea;
+}
+
+.filter-buttons .btn-secondary:hover {
+  background: rgba(147, 51, 234, 0.1);
+  color: #8324d8;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+.shopping-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--card-bg);
+  margin-bottom: 0.8rem;
+  padding: 1rem !important;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+}
+
+.shopping-list li:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 8px 25px rgba(147, 51, 234, 0.2);
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.shopping-list li .item-name {
+  flex: 1;
+  padding: 5px 10px;
+  font-size: 1.1rem;
+}
+
+.shopping-list li .delete-icon {
+  transform: scale(0);
+  transition: all 0.3s ease;
+  font-size: 24px !important;
+  cursor: pointer;
+  opacity: 0.7;
+  color: #dc2626;
+}
+
+.shopping-list li:hover .delete-icon {
+  transform: scale(1);
+}
+
+.shopping-list li[item-completed] .item-name {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.form-check-input {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border-color: #9333ea;
+}
+
+.form-check-input:checked {
+  background-color: #9333ea;
+  border-color: #9333ea;
+}
+
+.alert {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(147, 51, 234, 0.1), rgba(52, 211, 153, 0.1));
+  border: 1px solid rgba(147, 51, 234, 0.2);
+  box-shadow: 0 8px 32px rgba(147, 51, 234, 0.15);
+  color: #ffffff;
+  backdrop-filter: blur(8px);
+}
+
+.clear {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, #9333ea, #34d399);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.clear:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(147, 51, 234, 0.3);
+  background: linear-gradient(135deg, #8324d8, #2cb67d);
+}
+
+/* Özel scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #9333ea, #34d399);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #8324d8, #2cb67d);
+}
+
+/* Form ve buton stillerini güncelleyelim */
+.shopping-form .input-group {
+  gap: 10px;
+}
+
+.shopping-form .form-control {
+  border: 1px solid rgba(147, 51, 234, 0.2);
+  padding: 0.8rem 1.2rem;
+  font-size: 1.1rem;
+  border-radius: 12px !important;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.shopping-form .form-control::placeholder {
+  color: #9333ea;
+  opacity: 0.5;
+}
+
+.shopping-form .form-control:focus {
+  box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.2);
+  border-color: #9333ea;
+}
+
+.shopping-form .btn-primary {
+  background: linear-gradient(135deg, #9333ea, #34d399);
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 12px !important;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.shopping-form .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(147, 51, 234, 0.3);
+  background: linear-gradient(135deg, #8324d8, #2cb67d);
+}
+
+.shopping-form .btn-primary i {
+  transition: all 0.3s ease;
+}
+
+.shopping-form .btn-primary:hover i {
+  transform: rotate(90deg) scale(1.2);
+}
+
+/* Tema değişkenleri */
+:root[data-theme="dark"] {
+  --bg-gradient-1: #1a1c2a;
+  --bg-gradient-2: #2d3436;
+  --text-color: #ffffff;
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --primary-color: #9333ea;
+  --secondary-color: #34d399;
+  --shadow-color: rgba(147, 51, 234, 0.15);
+}
+
+:root[data-theme="light"] {
+  --bg-gradient-1: #f3f4f6;
+  --bg-gradient-2: #ffffff;
+  --text-color: #1f2937;
+  --card-bg: rgba(255, 255, 255, 0.98);
+  --primary-color: #8324d8;
+  --secondary-color: #2cb67d;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Tema geçiş animasyonu */
+html {
+  transition: all 0.5s ease-in-out;
+}
+
+/* Tema değiştirme butonu */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  cursor: pointer;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px var(--shadow-color);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1) rotate(10deg);
+}
+
+.theme-toggle .light-icon {
+  display: none;
+}
+
+[data-theme="light"] .theme-toggle .light-icon {
+  display: block;
+}
+
+[data-theme="light"] .theme-toggle .dark-icon {
+  display: none;
+}

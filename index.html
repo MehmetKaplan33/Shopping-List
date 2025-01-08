@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+      integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>✨ Akıllı Alışveriş Listesi</title>
+  </head>
+  <body>
+    <button class="theme-toggle">
+      <i class="bi bi-moon-stars-fill dark-icon"></i>
+      <i class="bi bi-sun-fill light-icon"></i>
+    </button>
+
+    <div class="container">
+      <h1 class="text-center">
+        <i class="bi bi-basket2-fill"></i> Akıllı Alışveriş Listesi
+      </h1>
+      <form class="shopping-form border rounded p-4 mb-4">
+        <div class="input-group">
+          <input
+            type="text"
+            id="item_name"
+            class="form-control form-control-lg"
+            placeholder="Yeni ürün ekle..."
+          />
+          <button class="btn btn-primary" type="submit">
+            <i class="bi bi-plus-lg"></i>
+          </button>
+        </div>
+      </form>
+      <div class="alert alert-warning">
+        <i class="bi bi-exclamation-circle-fill me-2"></i>Henüz ürün eklenmedi
+      </div>
+      <div class="filter-buttons border rounded p-3 mb-4">
+        <button item-filter="all" class="btn btn-primary">
+          <i class="bi bi-grid-fill me-2"></i>Tümü
+        </button>
+        <button item-filter="incomplete" class="btn btn-secondary">
+          <i class="bi bi-hourglass-split me-2"></i>Tamamlanmayan
+        </button>
+        <button item-filter="completed" class="btn btn-secondary">
+          <i class="bi bi-check2-all me-2"></i>Tamamlanan
+        </button>
+      </div>
+      <ul class="shopping-list list-unstyled"></ul>
+      <button class="btn btn-outline-danger clear">
+        <i class="bi bi-trash3-fill me-2"></i>Listeyi Temizle
+      </button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
