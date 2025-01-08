@@ -447,3 +447,189 @@ html {
 [data-theme="light"] .theme-toggle .dark-icon {
   display: none;
 }
+
+/* Tablet için (768px'e kadar) */
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 95%;
+    padding: 0 15px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .shopping-form {
+    padding: 1.5rem !important;
+  }
+
+  .filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .filter-buttons .btn {
+    min-width: auto;
+    flex: 1;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .shopping-list li {
+    padding: 0.8rem !important;
+  }
+
+  .shopping-list li .item-name {
+    font-size: 1rem;
+  }
+
+  .theme-toggle {
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+}
+
+/* Mobil için (576px'e kadar) */
+@media screen and (max-width: 576px) {
+  body {
+    padding: 1rem 0;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  h1::after {
+    width: 100px;
+  }
+
+  .shopping-form .input-group {
+    flex-direction: column;
+  }
+
+  .shopping-form .form-control {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .shopping-form .btn-primary {
+    width: 100%;
+    padding: 0.6rem;
+    font-size: 1rem;
+  }
+
+  .filter-buttons {
+    padding: 1rem !important;
+  }
+
+  .filter-buttons .btn {
+    width: 100%;
+    margin: 0;
+    font-size: 0.85rem;
+  }
+
+  .filter-buttons .btn i {
+    font-size: 0.9rem;
+  }
+
+  .shopping-list li {
+    margin-bottom: 0.5rem;
+    padding: 0.6rem !important;
+  }
+
+  .shopping-list li .item-name {
+    font-size: 0.9rem;
+    padding: 3px 5px;
+  }
+
+  .shopping-list li .delete-icon {
+    font-size: 20px !important;
+  }
+
+  .form-check-input {
+    width: 18px;
+    height: 18px;
+  }
+
+  .clear {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  /* Yüzen parçacıkları mobilde gizle */
+  .container::before,
+  .container::after {
+    display: none;
+  }
+
+  /* Arka plan desenlerini mobilde basitleştir */
+  body::before,
+  body::after {
+    opacity: 0.05;
+  }
+}
+
+/* Çok küçük ekranlar için (400px'e kadar) */
+@media screen and (max-width: 400px) {
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  .shopping-form {
+    padding: 1rem !important;
+  }
+
+  .filter-buttons .btn {
+    font-size: 0.8rem;
+   display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    gap: 5px;
+  }
+
+  .filter-buttons .btn i {
+    display: block;
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .filter-buttons .btn span {
+    display: block;
+    text-align: center;
+  }
+}
+
+/* Yatay mobil görünüm için */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  body {
+    padding: 0.5rem 0;
+  }
+
+  .container {
+    max-width: 90%;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .shopping-form,
+  .filter-buttons {
+    margin-bottom: 0.5rem;
+  }
+
+  .shopping-list {
+    max-height: 50vh;
+    overflow-y: auto;
+  }
+}
