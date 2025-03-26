@@ -95,4 +95,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 For questions and support, please open an issue.
 
-Made with by [Mehmet Kaplan]
+Made with by Mehmet Kaplan
