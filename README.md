@@ -91,8 +91,15 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-⭐ Star this repo if you like it!
+## 👨‍💻 Developer
 
-For questions and support, please open an issue.
+Mehmet Kaplan
 
-Made with by Mehmet Kaplan
+- GitHub: [@Kaplan_Mehmet_33]([https://github.com/mehmetkaplan](https://github.com/MehmetKaplan33))
+- LinkedIn: [Mehmet Kaplan](https://www.linkedin.com/in/mehmet-kaplan-601013294/)
+
+Proje Linki: [https://github.com/MehmetKaplan33/NFT](https://github.com/MehmetKaplan33/NFT)
+
+---
+
+⭐️ Don't forget to star if you like this project!
